@@ -16,7 +16,6 @@ O aplicativo é composto por 4 minijogos principais, cada um focado em desenvolv
 - **Interface Kids-Friendly:** Design colorido, botões grandes, ícones intuitivos e textos simplificados.
 - **Totalmente Responsivo:** Jogue no computador, tablet ou celular com a mesma qualidade de experiência. A interface se adapta perfeitamente a telas menores.
 - **Gamificação:** Sistema de recompensas com estrelas ao completar as fases, incentivando a progressão e o aprendizado contínuo.
-- **Inteligência Artificial (Gemini):** Integração com a API do Google Gemini para gerar novos níveis dinamicamente e fornecer dicas inteligentes e amigáveis quando a criança tiver dificuldade.
 
 ## 🛠️ Tecnologias Utilizadas
 
