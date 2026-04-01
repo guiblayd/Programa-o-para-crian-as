@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, Rocket, Paintbrush, ChefHat, Map } from 'lucide-react';
+import { Sparkles, Rocket, Paintbrush, ChefHat, Map, Bot, Code, Gamepad2 } from 'lucide-react';
 import RocketGame from './games/RocketGame';
 import PainterGame from './games/PainterGame';
 import ChefGame from './games/ChefGame';
 import PirateGame from './games/PirateGame';
+import Tutorial from './Tutorial';
 
-type Screen = 'home' | 'rocket' | 'painter' | 'chef' | 'pirate';
+type Screen = 'home' | 'rocket' | 'painter' | 'chef' | 'pirate' | 'tutorial';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('home');
@@ -25,6 +26,10 @@ export default function App() {
 
   if (currentScreen === 'pirate') {
     return <PirateGame onBack={() => setCurrentScreen('home')} />;
+  }
+
+  if (currentScreen === 'tutorial') {
+    return <Tutorial onBack={() => setCurrentScreen('home')} />;
   }
 
   return (
@@ -129,6 +134,29 @@ export default function App() {
           </div>
         </motion.button>
       </div>
+
+      {/* Tutorial Banner at the bottom */}
+      <motion.button
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        onClick={() => setCurrentScreen('tutorial')}
+        className="mt-12 max-w-4xl w-full bg-white p-6 sm:p-8 rounded-[2rem] shadow-xl border-4 border-indigo-100 flex flex-col sm:flex-row items-center justify-between gap-6 group hover:border-indigo-400 transition-colors text-left"
+      >
+        <div className="flex items-center gap-6">
+          <div className="bg-indigo-100 p-4 rounded-full text-indigo-500 group-hover:bg-indigo-200 transition-colors shrink-0">
+            <Bot className="w-12 h-12" />
+          </div>
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-black text-indigo-600 mb-2">O que é Programar?</h2>
+            <p className="text-slate-500 font-bold text-lg">
+              Descubra como dar superpoderes aos computadores!
+            </p>
+          </div>
+        </div>
+        <div className="bg-indigo-500 text-white px-8 py-3 rounded-full font-bold text-xl shadow-[0_6px_0_#4f46e5] group-active:shadow-none group-active:translate-y-1 transition-all whitespace-nowrap">
+          Aprender
+        </div>
+      </motion.button>
     </div>
   );
 }
